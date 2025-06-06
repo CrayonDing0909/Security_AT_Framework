@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Dylan Ding",
+    "employeeId": "123456",
+    "information": {
+      "email": "test email",
+      "company": "test company",
+      "title": "test title",
+      "note": "test note"
+    },
+    "coverImage": "data/images/Dylan_Ding.jpg",
+    "snapshot": [
+      "data/images/Dylan_Ding.jpg"
+    ],
+    "groupId": "1",
+    "skipQC": false
+  },
+  {
+    "name": "Will Chiang",
+    "employeeId": "654321",
+    "information": {
+      "email": "test email",
+      "company": "test company",
+      "title": "test title",
+      "note": "test note"
+    },
+    "coverImage": "data/images/Will_Chiang.png",
+    "snapshot": [
+      "data/images/Will_Chiang.png"
+    ],
+    "groupId": "2",
+    "skipQC": false
+  }
+]
+
