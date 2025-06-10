@@ -22,6 +22,10 @@ FaceMe_Security_ATFramework/
 │   └── conftest.py
 ├── config/             # Configuration files
 ├── data/              # Test data files
+│   ├── images/       # Test images
+│   └── testData/     # Test data JSON files
+│       ├── positive/ # Positive test cases
+│       └── negative/ # Negative test cases
 ├── utils/             # Utility functions
 ├── requirements.txt   # Project dependencies
 └── pytest.ini        # Pytest configuration
@@ -45,7 +49,10 @@ This testing framework is designed with the following principles in mind:
 
 4. **Test Data Management**:
    - Test data is stored separately in the `data/` directory
-   - Supports different data sets for different test scenarios
+   - Organized into positive and negative test cases
+   - Images are stored in `data/images/`
+   - JSON test data files are stored in `data/testData/positive/` and `data/testData/negative/`
+   - Each endpoint has its corresponding test data file
    - Easy to maintain and update test data
 
 ## Prerequisites
