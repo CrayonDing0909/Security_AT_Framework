@@ -1,6 +1,7 @@
 # test_order.py
 
 ordered_modules = [
+    "test_auth",
     "test_person_import",
     "test_person_query",
     "test_person_update",

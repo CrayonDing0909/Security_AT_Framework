@@ -14,9 +14,9 @@ class PersonClient:
         headers = {"Authorization": self.token}
 
         # ✅ Debug log
-        print("📤 POST URL:", url)
-        print("📤 Headers:", headers)
-        print("📤 Data Payload:")
+        print("POST URL:", url)
+        print("Headers:", headers)
+        print("Data Payload:")
         for k, v in data.items():
             print(f"    {k}: {v}")
         print("📤 Files:")
@@ -26,8 +26,8 @@ class PersonClient:
         response = requests.post(url, headers=headers, data=data, files=files)
 
         # # ✅ For Debugging
-        print("📥 Response Status Code:", response.status_code)
-        print("📥 Response Body:", response.text)
+        print("Response Status Code:", response.status_code)
+        print("Response Body:", response.text)
 
         response.raise_for_status()
         return response.json()
@@ -42,15 +42,15 @@ class PersonClient:
         # 考慮refine成params
 
         # ✅ Debug log
-        print("📤 POST URL:", url)
-        print("📤 Headers:", headers)
-        print("📤 Query Parameters:", params)
+        print("POST URL:", url)
+        print("Headers:", headers)
+        print("Query Parameters:", params)
 
         response = requests.post(url, headers=headers, params=params)
 
         # ✅ For Debugging
-        print("📥 Response Status Code:", response.status_code)
-        print("📥 Response Body:", response.text)
+        print("Response Status Code:", response.status_code)
+        print("Response Body:", response.text)
 
         response.raise_for_status()
         return response.json()
@@ -61,15 +61,15 @@ class PersonClient:
             "Authorization": self.token,
             }
 
-        print("📤 POST URL:", url)
-        print("📤 Headers:", headers)
-        print("📤 Data Payload:", data)
+        print("POST URL:", url)
+        print("Headers:", headers)
+        print("Data Payload:", data)
 
         response = requests.post(url, headers=headers, data=data, files=files)
 
-        print("📥 Response Status Code:", response.status_code)
-        print("📥 Response Body:", response.text)
-        print("📥 Response:", response)
+        print("Response Status Code:", response.status_code)
+        print("Response Body:", response.text)
+        print("Response:", response)
 
         response.raise_for_status()
         return response.json()
@@ -78,17 +78,17 @@ class PersonClient:
         url = f"{self.base_url}/api/website/person/info/update"
         headers = {"Authorization": self.token}
 
-        print("📤 POST URL:", url)
-        print("📤 Headers:", headers)
-        print("📤 Data Payload:", data)
+        print("POST URL:", url)
+        print("Headers:", headers)
+        print("Data Payload:", data)
 
         response = requests.post(
             url, headers=headers, data=data, files=files
             )
 
-        print("📥 Response Status Code:", response.status_code)
-        print("📥 Response Body:", response.text)
-        print("📥 Response:", response)
+        print("Response Status Code:", response.status_code)
+        print("Response Body:", response.text)
+        print("Response:", response)
 
         response.raise_for_status()
         return response  # not json, so return response object directly
@@ -100,14 +100,14 @@ class PersonClient:
             "Content-Type": "application/x-www-form-urlencoded"
             }
         params = {"personId": data["personId"]}
-        print("📤 POST URL:", url)
-        print("📤 Headers:", headers)
-        print("📤 params Payload:", params)
+        print("POST URL:", url)
+        print("Headers:", headers)
+        print("params Payload:", params)
         response = requests.post(url, headers=headers, params=params)
 
-        print("📥 Response Status Code:", response.status_code)
-        print("📥 Response Body:", response.text)
-        print("📥 Response:", response)
+        print("Response Status Code:", response.status_code)
+        print("Response Body:", response.text)
+        print("Response:", response)
 
         response.raise_for_status()
         return response

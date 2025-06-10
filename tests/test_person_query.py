@@ -1,9 +1,11 @@
 import pytest
-from utils.data_loader import load_json_data
+from utils.data_loader import load_positive_test_data
 
 
 @pytest.mark.parametrize(
-    "person_data", load_json_data("data/testData/person_query.json"))
+    "person_data", 
+    load_positive_test_data("person_query")
+)
 def test_query_person_success(person_client, person_data):
     response = person_client.query_person(person_data["personId"])
     assert response["personId"] == person_data["personId"]

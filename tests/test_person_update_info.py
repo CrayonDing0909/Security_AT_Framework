@@ -1,10 +1,12 @@
 import json
 import pytest
-from utils.data_loader import load_json_data
+from utils.data_loader import load_positive_test_data
 
 
 @pytest.mark.parametrize(
-    "person_data", load_json_data("data/testData/peson_update_info.json"))
+    "person_data", 
+    load_positive_test_data("person_update_info")
+)
 def test_update_person_info(person_client, person_data):
     data = {
         "personId": person_data["personId"],

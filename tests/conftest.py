@@ -3,9 +3,11 @@ import pytest
 from utils.config_loader import get_config
 from api_client.auth_client import AuthClient
 from api_client.person_client import PersonClient
+from api_client.face_client import FaceClient
 import os
 from _pytest.nodes import Item
 from test_order import ordered_modules
+from utils.data_loader import load_positive_test_data, load_negative_test_data
 
 
 def pytest_collection_modifyitems(items: list[Item]):
@@ -65,3 +67,35 @@ def person_client(auth_client):
         base_url=auth_client.base_url,
         token=auth_client.token
     )
+
+
+@pytest.fixture(scope="module")
+def face_client(auth_client):
+    return FaceClient(
+        base_url=auth_client.base_url,
+        token=auth_client.token
+    )
+
+
+@pytest.fixture(scope="function")
+def positive_test_data(request):
+    """
+    Fixture for loading positive test data
+    Usage: def test_something(positive_test_data):
+        data = positive_test_data('endpoint_name')
+    """
+    def _load_data(endpoint):
+        return load_positive_test_data(endpoint)
+    return _load_data
+
+
+@pytest.fixture(scope="function")
+def negative_test_data(request):
+    """
+    Fixture for loading negative test data
+    Usage: def test_something(negative_test_data):
+        data = negative_test_data('endpoint_name')
+    """
+    def _load_data(endpoint):
+        return load_negative_test_data(endpoint)
+    return _load_data

@@ -1,10 +1,12 @@
 import json
 import pytest
-from utils.data_loader import load_json_data
+from utils.data_loader import load_positive_test_data
 
 
 @pytest.mark.parametrize(
-    "person_data", load_json_data("data/testData/person_import.json"))
+    "person_data", 
+    load_positive_test_data("person_import")
+)
 def test_import_person_success(person_client, person_data):
     # 🔧 將資料轉為 form-data 格式
     data = {
