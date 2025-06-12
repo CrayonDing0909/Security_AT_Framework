@@ -1,12 +1,12 @@
 # FaceMe Security API Testing Framework
 
-This project is an automated testing framework for the FaceMe Security API. It provides a structured way to test various API endpoints and functionalities of the FaceMe Security system.
+This project is an automated testing framework for the API testing. It provides a structured way to test various API endpoints and functionalities of the system.
 
 ## Project Structure
 
 ```
 Still Updating 25/06/06
-FaceMe_Security_ATFramework/
+Security_ATFramework/
 ├── api_client/           # API client implementations
 │   ├── auth_client.py    # Authentication client
 │   ├── person_client.py  # Person management client
